@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    
+    const products=[
+    {pid:100,pName:'apple',band:'5g',price:120000,display:'led'},
+    {pid:101,pName:'samsaung',band:'5g',price:45000,display:'led'},
+    {pid:102,pName:'blackberry',band:'4g',price:50000,display:'led'},
+    {pid:103,pName:'nokia',band:'3g',price:1200,display:'lcd'},
+    {pid:104,pName:'motorola',band:'4g',price:10000,display:'lcd'}
+];
+let productName= products.map((a)=>a.pName)
+console.log(productName);
+
+let productDisplay= products.filter((b)=>b.display=="lcd");
+console.log(productDisplay);
+
+let bandName= products.filter((c)=>c.band=="5g").map((a)=>a.pName)
+console.log(bandName);
+
+let filteredProduct= products.sort((a,b)=>{return a.price-b.price})
+console.log(filteredProduct);
+
+let costlyProduct= products.reduce((a,b)=>a.price>b.price?a:b)
+console.log(costlyProduct.pName);
+
+let lowcostProduct= products.reduce((a,b)=>a.price<b.price?a:b)
+console.log(lowcostProduct.pName);
+
+
+  </script>
+</body>
+</html>
